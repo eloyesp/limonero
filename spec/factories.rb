@@ -28,7 +28,7 @@ FactoryGirl.define do
   factory :contrato do
   end
 
-  factory :lote, :class => Lot do
+  factory :lote do
     sequence(:partida) { |n| "#{n}-virtual" }
   end
 end
