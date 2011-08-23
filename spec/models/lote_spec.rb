@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Lot do
+describe Lote do
   it { should have_many :avaluos }
 
   context 'si el lote no esta vendido' do
