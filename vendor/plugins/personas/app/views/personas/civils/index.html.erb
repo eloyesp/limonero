@@ -1,0 +1,23 @@
+<h1>Listing civils</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @civils.each do |civil| %>
+  <tr>
+    <td><%= civil.name %></td>
+    <td><%= link_to 'Show', civil %></td>
+    <td><%= link_to 'Edit', edit_civil_path(civil) %></td>
+    <td><%= link_to 'Destroy', civil, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Civil', new_civil_path %>

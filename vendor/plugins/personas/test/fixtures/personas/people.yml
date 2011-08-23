@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  born: 2011-08-08
+  doc: MyString
+  dead: 2011-08-08
+  observations: MyText
+  civil_id: 1
+  tdoc_id: 1
+  city_id: 1
+
+two:
+  name: MyString
+  born: 2011-08-08
+  doc: MyString
+  dead: 2011-08-08
+  observations: MyText
+  civil_id: 1
+  tdoc_id: 1
+  city_id: 1

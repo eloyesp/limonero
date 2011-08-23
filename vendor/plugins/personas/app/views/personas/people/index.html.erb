@@ -1,0 +1,9 @@
+<h1>Listado de Personas</h1>
+<%= render :partial =>"/personas/people/search" %>
+<%= paginate @people %>
+
+<%= render :partial =>"/personas/people/people"%>
+
+<br />
+
+<%= link_to 'New Person', new_person_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  street: MyString
+  number: 1
+  other: MyString
+  taddress_id: 1
+  people_id: 1
+
+two:
+  street: MyString
+  number: 1
+  other: MyString
+  taddress_id: 1
+  people_id: 1
