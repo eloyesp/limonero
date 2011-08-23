@@ -2,7 +2,8 @@ class LotesController < ApplicationController
   # GET /lotes
   # GET /lotes.json
   def index
-    @lotes = Lote.all
+    @search = Lote.search(params[:search])
+    @lotes = @search.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

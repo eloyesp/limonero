@@ -1,6 +1,9 @@
+$green: #BBFFCC;
+
+/*
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: $green;
+  color: darken($green, 90%);
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px; }
@@ -21,8 +24,7 @@ a {
     color: #666; }
   &:hover {
     color: #fff;
-    background-color: #000; } }
-
+    background-color: #000; } }  */
 div {
   &.field, &.actions {
     margin-bottom: 10px; } }
@@ -54,3 +56,30 @@ div {
   ul li {
     font-size: 12px;
     list-style: square; } }
+
+@import "blueprint/typography";
+
+@include blueprint-typography;
+
+$blueprint_grid_columns: 12;
+$blueprint_grid_width: 60px;
+$background-green: #BFC;
+
+@import "blueprint/grid";
+
+a {
+  @include link-colors(#00d, #0cc, #c0c, #77c, #cc0); }
+
+body {
+  @include container;
+  background-color: $background-green;
+  header, footer {
+    @include column(12);
+    .title { @include column(6);}
+    .search-bar {
+      @include column(6, true);
+      @include prepend-top(3em); } }
+  .big-sidebar {
+    @include column(4); }
+  .details {
+    @include column(8, true); } }

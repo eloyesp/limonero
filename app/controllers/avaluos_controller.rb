@@ -41,10 +41,10 @@ class AvaluosController < ApplicationController
   # POST /avaluos.json
   def create
     @avaluo = Avaluo.new(params[:avaluo])
-
+    @avaluo.lote_id = params[:lote_id]
     respond_to do |format|
       if @avaluo.save
-        format.html { redirect_to @avaluo, notice: 'Avaluo was successfully created.' }
+        format.html { redirect_to @avaluo.lote, notice: 'Avaluo was successfully created.' }
         format.json { render json: @avaluo, status: :created, location: @avaluo }
       else
         format.html { render action: "new" }

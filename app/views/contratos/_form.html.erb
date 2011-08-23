@@ -1,10 +1,10 @@
-<%= form_for(@contrato) do |f| %>
-  <% if @contrato.errors.any? %>
+<%= form_for(@payment) do |f| %>
+  <% if @payment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@contrato.errors.count, "error") %> prohibited this contrato from being saved:</h2>
+      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
 
       <ul>
-      <% @contrato.errors.full_messages.each do |msg| %>
+      <% @payment.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -16,8 +16,7 @@
     <%= f.date_select :inicio %>
   </div>
   <div class="field">
-    <%= f.label :avaluo_id %><br />
-    <%= f.number_field :avaluo_id %>
+    <%= f.hidden_field :avaluo_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
