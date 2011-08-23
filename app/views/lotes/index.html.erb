@@ -1,0 +1,29 @@
+<h1>Listing lotes</h1>
+
+<table>
+  <tr>
+    <th>Manzana</th>
+    <th>Loteo</th>
+    <th>Parcela</th>
+    <th>Partida</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lotes.each do |lote| %>
+  <tr>
+    <td><%= lote.manzana %></td>
+    <td><%= lote.loteo %></td>
+    <td><%= lote.parcela %></td>
+    <td><%= lote.partida %></td>
+    <td><%= link_to 'Show', lote %></td>
+    <td><%= link_to 'Edit', edit_lote_path(lote) %></td>
+    <td><%= link_to 'Destroy', lote, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lote', new_lote_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Manzana:</b>
+  <%= @lote.manzana %>
+</p>
+
+<p>
+  <b>Loteo:</b>
+  <%= @lote.loteo %>
+</p>
+
+<p>
+  <b>Parcela:</b>
+  <%= @lote.parcela %>
+</p>
+
+<p>
+  <b>Partida:</b>
+  <%= @lote.partida %>
+</p>
+
+
+<%= link_to 'Edit', edit_lote_path(@lote) %> |
+<%= link_to 'Back', lotes_path %>
