@@ -3,8 +3,18 @@ Limonero::Application.routes.draw do
 
   resources :avaluos
 
-  resources :lotes
+  resources :lotes do
+    resources :avaluos
+    resources :contratos
+  end
 
+  resources :contratos do
+    resources :compradores  
+    # resources :pays
+  end
+
+  mount Personas::Engine => "/personas"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
