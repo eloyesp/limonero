@@ -49,9 +49,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.5'
   gem 'factory_girl_rails'
   gem 'forgery'
-#  gem 'guard-rspec'
-#  gem 'rb-inotify'
-#  gem 'libnotify'
+  gem 'guard-rspec'
+  gem 'rb-inotify'
+  gem 'libnotify'
 #  gem 'guard-livereload'
 end
 
