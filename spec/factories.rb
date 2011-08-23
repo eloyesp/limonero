@@ -8,17 +8,15 @@ FactoryGirl.define do
     name "soltero"
   end
 
-  factory :person, :class => "Personas::Person" do
+  factory :persona, :class => "Personas::Person" do
 
     factory :juan_perez do
-      apellido          "Perez"
-      apellido_materno  "Fernandez"
-      nombre            "Juan"
-      nacimiento        "1981-01-01"
-      documento         "28644242"
+      name              "Juan Perez Fernandez"
+      born              "1981-01-01"
+      doc               "28.644.242"
       association       :tdoc
       association       :civil
-      observaciones     ""
+      observaciones     "Un amigo"
     end
   end
 
