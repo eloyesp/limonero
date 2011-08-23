@@ -1,0 +1,5 @@
+  <%= form.inputs :name, :born, :doc%>
+  <%= form.input :tdoc,:collection => Personas::Tdoc.all %>
+  <%= form.input :civil,:collection => Personas::Civil.all %>
+  <%= form.input :sexo,:collection => Personas::Sexo.all,:as=>:radio %>
+  <%= form.inputs :observations %>

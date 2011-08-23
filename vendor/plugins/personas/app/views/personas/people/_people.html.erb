@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Documento</th>
+    <th>Nacimiento</th>
+    <th>Civil</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @people.each do |person| %>
+  <tr>
+    <td><%= person.name %></td>
+    <td><%= person.tdoc.try :name %> <%= person.doc %></td>
+    <td><%= person.civil.try :name%></td>
+    <td><%= link_to 'Show', person %></td>
+    <td><%= link_to 'Edit', edit_person_path(person) %></td>
+    <td><%= link_to 'Destroy', person, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>

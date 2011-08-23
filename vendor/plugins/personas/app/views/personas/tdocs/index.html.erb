@@ -1,0 +1,23 @@
+<h1>Listing tdocs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tdocs.each do |tdoc| %>
+  <tr>
+    <td><%= tdoc.name %></td>
+    <td><%= link_to 'Show', tdoc %></td>
+    <td><%= link_to 'Edit', edit_tdoc_path(tdoc) %></td>
+    <td><%= link_to 'Destroy', tdoc, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tdoc', new_tdoc_path %>

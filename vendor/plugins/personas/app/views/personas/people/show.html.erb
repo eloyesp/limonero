@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<%=render :partial => "/personas/people/person"%>
+
+
+<%= render :partial =>"/personas/addresses/addresses",:locals=>{:@addresses => @person.addresses} %>
+<%= link_to 'Nueva ubicacion de contacto', new_person_address_path(@person) %> |
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

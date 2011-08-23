@@ -1,0 +1,23 @@
+<h1>Listing taddresses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @taddresses.each do |taddress| %>
+  <tr>
+    <td><%= taddress.name %></td>
+    <td><%= link_to 'Show', taddress %></td>
+    <td><%= link_to 'Edit', edit_taddress_path(taddress) %></td>
+    <td><%= link_to 'Destroy', taddress, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Taddress', new_taddress_path %>
