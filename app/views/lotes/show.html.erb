@@ -1,25 +1,44 @@
 <p id="notice"><%= notice %></p>
-
+<h2>Lote</h2>
+<%= link_to 'Editar', edit_lot_path(@lot) %> |
+<%= link_to 'Ver todos los lotes', lots_path %>
 <p>
   <b>Manzana:</b>
-  <%= @lote.manzana %>
+  <%= @lot.manzana %>
 </p>
 
 <p>
   <b>Loteo:</b>
-  <%= @lote.loteo %>
+  <%= @lot.loteo %>
 </p>
 
 <p>
   <b>Parcela:</b>
-  <%= @lote.parcela %>
+  <%= @lot.parcela %>
 </p>
 
 <p>
   <b>Partida:</b>
-  <%= @lote.partida %>
+  <%= @lot.partida %>
 </p>
 
+<h2>Valor</h2>
+<%= link_to 'Actualizar precio', new_lot_avaluo_path(@lot) %>
+<%= render :partial => "avaluos/avaluo",:locals=>{:@avaluo => @lot.avaluos.last} %>
 
-<%= link_to 'Edit', edit_lote_path(@lote) %> |
-<%= link_to 'Back', lotes_path %>
+<% if @lot.avaluos.last %>
+  <h2>Plan de cuentas</h2>
+  <% if !@lot.avaluos.last.payments.last %>
+    <%= link_to 'Crear plan de pagos', new_lot_payment_path(@lot) %>
+  <% end %>
+
+  <% @lot.avaluos.last.payments.each do |payment| %>
+    <%= render :partial =>"/contratos/contratos",:locals=>{:@contratos=>payment.contratos}%>
+  <% end %>
+
+  <%= link_to 'Ver pagos', payment_pays_path(@lot) %>
+
+<% end %>
+
+
+

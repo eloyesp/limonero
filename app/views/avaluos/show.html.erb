@@ -1,39 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Ncuotas:</b>
-  <%= @avaluo.ncuotas %>
-</p>
-
-<p>
-  <b>Cuota cents:</b>
-  <%= @avaluo.cuota_cents %>
-</p>
-
-<p>
-  <b>Cuota inicial:</b>
-  <%= @avaluo.cuota_inicial %>
-</p>
-
-<p>
-  <b>Cuota currency:</b>
-  <%= @avaluo.cuota_currency %>
-</p>
-
-<p>
-  <b>Interes:</b>
-  <%= @avaluo.interes %>
-</p>
-
-<p>
-  <b>Lote:</b>
-  <%= @avaluo.lote_id %>
-</p>
-
-<p>
-  <b>Observaciones:</b>
-  <%= @avaluo.observaciones %>
-</p>
+<%= render :partial => "avaluos/avaluo"%>
 
 
 <%= link_to 'Edit', edit_avaluo_path(@avaluo) %> |

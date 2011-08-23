@@ -2,14 +2,15 @@
 
 <p>
   <b>Inicio:</b>
-  <%= @contrato.inicio %>
+  <%= @payment.inicio %>
 </p>
 
-<p>
-  <b>Avaluo:</b>
-  <%= @contrato.avaluo_id %>
-</p>
+<%= render :partial => "avaluos/avaluo", :locals=>{:@avaluo => @payment.avaluo}%>
+<%= link_to 'Agregar Persona', new_payment_contrato_path(@payment) %>
 
+<%= render :partial => "contratos/contratos",:locals =>{:@contratos => @payment.contratos} %>
 
-<%= link_to 'Edit', edit_contrato_path(@contrato) %> |
-<%= link_to 'Back', contratos_path %>
+<%= link_to 'Ver Pagos', payment_pays_path(@payment) %> |
+<%= link_to 'Generar un pago', new_payment_pay_path(@payment) %> |
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

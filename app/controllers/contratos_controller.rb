@@ -2,7 +2,8 @@ class ContratosController < ApplicationController
   # GET /contratos
   # GET /contratos.json
   def index
-    @contratos = Contrato.all
+    @search = Contrato.search(params[:search])
+    @contratos = @search.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +26,8 @@ class ContratosController < ApplicationController
   # GET /contratos/new.json
   def new
     @contrato = Contrato.new
-
+    @lot = Lot.find(params[:lot_id])
+    @contrato.avaluo = @lot.avaluos.last
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @contrato }
