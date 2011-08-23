@@ -6,7 +6,7 @@ class Lote < ActiveRecord::Base
 
   # Si el lotee está vendido, indica el nombre del comprador.
   def titular
-    payment_actual.try(:compradores).try(:first).try(:person).try(:name)
+    contrato.try(:compradores).try(:first).try(:person).try(:name)
   end
 
   # Indica si el lote fue vendido o no.
@@ -23,8 +23,13 @@ class Lote < ActiveRecord::Base
     (titular)
   end
 
-  # Indica el último pago.
-  def payment_actual
-    try(:avaluos).try(:last).try(:payments).try(:last)
+  # Indica contrato en caso de estar vendido.
+  def contrato
+    avaluo.try(:contrato)
+  end
+
+  # El avaluo actual
+  def avaluo
+    avaluos.last
   end
 end
