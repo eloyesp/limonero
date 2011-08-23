@@ -1,0 +1,35 @@
+<h1>Listing avaluos</h1>
+
+<table>
+  <tr>
+    <th>Ncuotas</th>
+    <th>Cuota cents</th>
+    <th>Cuota inicial</th>
+    <th>Cuota currency</th>
+    <th>Interes</th>
+    <th>Lote</th>
+    <th>Observaciones</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @avaluos.each do |avaluo| %>
+  <tr>
+    <td><%= avaluo.ncuotas %></td>
+    <td><%= avaluo.cuota_cents %></td>
+    <td><%= avaluo.cuota_inicial %></td>
+    <td><%= avaluo.cuota_currency %></td>
+    <td><%= avaluo.interes %></td>
+    <td><%= avaluo.lote_id %></td>
+    <td><%= avaluo.observaciones %></td>
+    <td><%= link_to 'Show', avaluo %></td>
+    <td><%= link_to 'Edit', edit_avaluo_path(avaluo) %></td>
+    <td><%= link_to 'Destroy', avaluo, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Avaluo', new_avaluo_path %>

@@ -1,4 +1,6 @@
 Limonero::Application.routes.draw do
+  resources :avaluos
+
   resources :lotes
 
   # The priority is based upon order of creation:

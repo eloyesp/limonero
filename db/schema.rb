@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110823150313) do
+ActiveRecord::Schema.define(:version => 20110823155824) do
+
+  create_table "avaluos", :force => true do |t|
+    t.integer  "ncuotas"
+    t.integer  "cuota_cents"
+    t.integer  "cuota_inicial"
+    t.string   "cuota_currency", :limit => 3
+    t.float    "interes"
+    t.integer  "lote_id"
+    t.text     "observaciones"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "lotes", :force => true do |t|
     t.string   "manzana"

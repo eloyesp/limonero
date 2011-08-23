@@ -1,0 +1,2 @@
+module AvaluosHelper
+end

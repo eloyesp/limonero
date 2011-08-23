@@ -1,0 +1,45 @@
+<%= form_for(@avaluo) do |f| %>
+  <% if @avaluo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@avaluo.errors.count, "error") %> prohibited this avaluo from being saved:</h2>
+
+      <ul>
+      <% @avaluo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ncuotas %><br />
+    <%= f.number_field :ncuotas %>
+  </div>
+  <div class="field">
+    <%= f.label :cuota_cents %><br />
+    <%= f.number_field :cuota_cents %>
+  </div>
+  <div class="field">
+    <%= f.label :cuota_inicial %><br />
+    <%= f.number_field :cuota_inicial %>
+  </div>
+  <div class="field">
+    <%= f.label :cuota_currency %><br />
+    <%= f.text_field :cuota_currency %>
+  </div>
+  <div class="field">
+    <%= f.label :interes %><br />
+    <%= f.text_field :interes %>
+  </div>
+  <div class="field">
+    <%= f.label :lote_id %><br />
+    <%= f.number_field :lote_id %>
+  </div>
+  <div class="field">
+    <%= f.label :observaciones %><br />
+    <%= f.text_area :observaciones %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
