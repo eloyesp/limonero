@@ -16,6 +16,7 @@ describe "lotes/index.html.erb" do
         :partida => "Partida"
       )
     ])
+    assign(:search, Lote.search())
   end
 
   it "renders a list of lotes" do
