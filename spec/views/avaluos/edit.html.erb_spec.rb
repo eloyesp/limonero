@@ -23,7 +23,6 @@ describe "avaluos/edit.html.erb" do
       assert_select "input#avaluo_cuota_inicial", :name => "avaluo[cuota_inicial]"
       assert_select "input#avaluo_cuota_currency", :name => "avaluo[cuota_currency]"
       assert_select "input#avaluo_interes", :name => "avaluo[interes]"
-      assert_select "input#avaluo_lote_id", :name => "avaluo[lote_id]"
       assert_select "textarea#avaluo_observaciones", :name => "avaluo[observaciones]"
     end
   end

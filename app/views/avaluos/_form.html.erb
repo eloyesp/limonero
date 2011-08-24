@@ -1,4 +1,4 @@
-<%= form_for([:lot,@avaluo]) do |f| %>
+<%= form_for([@lote, @avaluo]) do |f| %>
   <% if @avaluo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@avaluo.errors.count, "error") %> prohibited this avaluo from being saved:</h2>
@@ -15,15 +15,32 @@
     <%= f.label :numero_de_cuotas %><br />
     <%= f.number_field :ncuotas %>
   </div>
+
+  <div class="field">
+    <%= f.label :cuota_inicial %><br />
+    <%= f.number_field :cuota_inicial %>
+  </div>
+
   <div class="field">
     <%= f.label :valor_cuota %><br />
-    <%= f.number_field :couta_cents %>
+    <%= f.number_field :cuota_cents %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cuota_currency %><br />
+    <%= f.text_field :cuota_currency %>
   </div>
 
   <div class="field">
     <%= f.label :interes %><br />
     <%= f.text_field :interes %>
   </div>
+
+  <div class="field">
+    <%= f.label :observaciones %><br />
+    <%= f.text_area :observaciones %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
