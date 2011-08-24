@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Contrato do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to(:avaluo) }
+  it { should have_many(:compradores) }
+  it { should have_many(:persons) }
 end
