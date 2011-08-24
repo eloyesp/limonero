@@ -3,8 +3,7 @@ require 'spec_helper'
 describe "Avaluos" do
   describe "GET /avaluos" do
     it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get avaluos_path
+      get lote_avaluos_path(Factory(:lote))
       response.status.should be(200)
     end
   end

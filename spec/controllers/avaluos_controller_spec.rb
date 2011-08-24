@@ -23,14 +23,19 @@ describe AvaluosController do
   # This should return the minimal set of attributes required to create a valid
   # Avaluo. As you add validations to Avaluo, be sure to
   # update the return value of this method accordingly.
+  
+  def lote
+     @lote ||= Factory(:lote)
+  end
+
   def valid_attributes
-    {}
+    { }
   end
 
   describe "GET index" do
     it "assigns all avaluos as @avaluos" do
       avaluo = Avaluo.create! valid_attributes
-      get :index
+      get :index, :lote_id => lote.id.to_s
       assigns(:avaluos).should eq([avaluo])
     end
   end
@@ -38,14 +43,14 @@ describe AvaluosController do
   describe "GET show" do
     it "assigns the requested avaluo as @avaluo" do
       avaluo = Avaluo.create! valid_attributes
-      get :show, :id => avaluo.id.to_s
+      get :show, :id => avaluo.id.to_s, :lote_id => lote.id.to_s
       assigns(:avaluo).should eq(avaluo)
     end
   end
 
   describe "GET new" do
     it "assigns a new avaluo as @avaluo" do
-      get :new
+      get :new, :lote_id => lote.id.to_s
       assigns(:avaluo).should be_a_new(Avaluo)
     end
   end
@@ -53,7 +58,7 @@ describe AvaluosController do
   describe "GET edit" do
     it "assigns the requested avaluo as @avaluo" do
       avaluo = Avaluo.create! valid_attributes
-      get :edit, :id => avaluo.id.to_s
+      get :edit, :id => avaluo.id.to_s, :lote_id => lote.id.to_s
       assigns(:avaluo).should eq(avaluo)
     end
   end
@@ -62,19 +67,19 @@ describe AvaluosController do
     describe "with valid params" do
       it "creates a new Avaluo" do
         expect {
-          post :create, :avaluo => valid_attributes
+          post :create, :avaluo => valid_attributes, :lote_id => lote.id.to_s
         }.to change(Avaluo, :count).by(1)
       end
 
       it "assigns a newly created avaluo as @avaluo" do
-        post :create, :avaluo => valid_attributes
+        post :create, :avaluo => valid_attributes, :lote_id => lote.id.to_s
         assigns(:avaluo).should be_a(Avaluo)
         assigns(:avaluo).should be_persisted
       end
 
       it "redirects to the created avaluo" do
-        post :create, :avaluo => valid_attributes
-        response.should redirect_to(Avaluo.last)
+        post :create, :avaluo => valid_attributes, :lote_id => lote.id.to_s
+        response.should redirect_to(lote)
       end
     end
 
@@ -82,14 +87,14 @@ describe AvaluosController do
       it "assigns a newly created but unsaved avaluo as @avaluo" do
         # Trigger the behavior that occurs when invalid params are submitted
         Avaluo.any_instance.stub(:save).and_return(false)
-        post :create, :avaluo => {}
+        post :create, :avaluo => {}, :lote_id => lote.id.to_s
         assigns(:avaluo).should be_a_new(Avaluo)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Avaluo.any_instance.stub(:save).and_return(false)
-        post :create, :avaluo => {}
+        post :create, :avaluo => {}, :lote_id => lote.id.to_s
         response.should render_template("new")
       end
     end
@@ -153,5 +158,4 @@ describe AvaluosController do
       response.should redirect_to(avaluos_url)
     end
   end
-
 end
