@@ -14,9 +14,6 @@ FactoryGirl.define do
       name              "Juan Perez Fernandez"
       born              "1981-01-01"
       doc               "28.644.242"
-      association       :tdoc
-      association       :civil
-      observaciones     "Un amigo"
     end
   end
 
