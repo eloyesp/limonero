@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Inicio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contratos.each do |contrato| %>
+  <tr>
+    <td><%= contrato.inicio %></td>
+    <td><%= link_to 'Detalles', contrato %></td>
+    <td><%= link_to 'Editar', edit_contrato_path(contrato) %></td>
+    <td><%= link_to 'Borrar', contrato, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+
+</table>

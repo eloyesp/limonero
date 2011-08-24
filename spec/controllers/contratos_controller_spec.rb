@@ -23,6 +23,10 @@ describe ContratosController do
   # This should return the minimal set of attributes required to create a valid
   # Contrato. As you add validations to Contrato, be sure to
   # update the return value of this method accordingly.
+  def lote
+    @lote ||= Factory(:lote)
+  end
+
   def valid_attributes
     {}
   end
@@ -45,7 +49,7 @@ describe ContratosController do
 
   describe "GET new" do
     it "assigns a new contrato as @contrato" do
-      get :new
+      get :new, :lote_id => lote.id.to_s
       assigns(:contrato).should be_a_new(Contrato)
     end
   end
